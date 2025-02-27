@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Grupo | Equipe Incrível</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #1e002e, #5e2b50, #ac6e85);
+            color: #fff;
+        }
+        .header {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(90deg, #1e002e, #5e2b50);
+            color: #ffaf7b;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: static;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin: 100px auto 40px;
+            max-width: 1200px;
+        }
+        .member {
+            background: #2b0d4580;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 10px;
+            width: 280px;
+            text-align: center;
+            color: #fff;
+            opacity: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        .member img {
+            width: 100%;
+            max-width: 120px;
+            height: auto;
+            border-radius: 50%;
+            border: 4px solid #ac6e85;
+        }
+        .member h2 {
+            margin-top: 10px;
+            color: #ffaf7b;
+        }
+        .social-icons {
+            margin-top: 8px;
+        }
+        .social-icons a {
+            margin: 0 5px;
+            color: #ffaf7b;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #d76d77;
+        }
+        footer {
+            background: linear-gradient(90deg, #1e002e, #5e2b50);
+            color: #ffaf7b;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 15px 15px 0 0;
+            font-weight: bold;
+            width: 100%;
+            position: static;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>Bem-vindos ao nosso site! Conheça mais sobre nossa equipe incrível.</p>
+    </div>
+    <div class="container" id="membros"></div>
+    <footer>
+        <p>&copy; 2025 Nosso Grupo - Todos os direitos reservados</p>
+    </footer>
+    <script>
+        const membros = [
+            { nome: "Nome 1", descricao: "Descrição sobre a pessoa 1", imagem: "avatar1.png" },
+            { nome: "Nome 2", descricao: "Descrição sobre a pessoa 2", imagem: "avatar2.png" },
+            { nome: "Nome 3", descricao: "Descrição sobre a pessoa 3", imagem: "avatar3.png" }
+        ];
+
+        const container = document.getElementById("membros");
+
+        membros.forEach(membro => {
+            const div = document.createElement("div");
+            div.className = "member";
+            div.innerHTML = `
+                <img src="${membro.imagem}" alt="Foto do membro ${membro.nome}">
+                <h2>${membro.nome}</h2>
+                <p>${membro.descricao}</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
