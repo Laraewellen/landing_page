@@ -1,12 +1,20 @@
+<!-- Declaração do tipo de documento -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <!-- Definição da codificação de caracteres para suportar acentos e caracteres especiais -->
     <meta charset="UTF-8">
+    <!-- Configuração para tornar o site responsivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Grupo</title>
+    
+    <!-- Importação de ícones do FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Importação da fonte Poppins do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
+        /* Configuração global do corpo da página */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -15,6 +23,8 @@
             color: #fff;
             text-align: center;
         }
+        
+        /* Estilização do cabeçalho */
         .header {
             padding: 20px;
             background: linear-gradient(90deg, #070739, #24023c, #420242);
@@ -25,6 +35,8 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             margin: 10px;
         }
+        
+        /* Estilização do rodapé */
         footer {
             padding: 20px;
             background: transparent;
@@ -35,6 +47,8 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             margin: 10px;
         }
+        
+        /* Layout do container dos membros */
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -44,6 +58,8 @@
             max-width: 1200px;
             margin: auto;
         }
+        
+        /* Estilo dos cartões dos membros */
         .member {
             background: rgba(43, 13, 69, 0.5);
             backdrop-filter: blur(15px);
@@ -54,10 +70,14 @@
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        
+        /* Efeito ao passar o mouse sobre os cartões */
         .member:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
         }
+        
+        /* Estilo das imagens dos membros */
         .member img {
             width: 110px;
             height: 110px;
@@ -65,15 +85,21 @@
             border: 5px solid #ffaf7b;
             object-fit: cover;
         }
+        
+        /* Nome do membro */
         .member h2 {
             margin-top: 10px;
             color: #ffaf7b;
             font-weight: 600;
         }
+        
+        /* Descrição do membro */
         .member p {
             font-size: 14px;
             color: #ddd;
         }
+        
+        /* Ícones sociais */
         .social-icons {
             margin-top: 10px;
         }
@@ -90,14 +116,21 @@
     </style>
 </head>
 <body>
+    <!-- Cabeçalho da página -->
     <div class="header">
         <p>Quem nós somos?</p>
     </div>
+    
+    <!-- Container onde os membros serão adicionados dinamicamente -->
     <div class="container" id="membros"></div>
+    
+    <!-- Rodapé da página -->
     <footer>
         <p>&copy; 2025 Nosso Grupo - Todos os direitos reservados</p>
     </footer>
+    
     <script>
+        // Lista de membros com suas informações
         const membros = [
             { 
                 nome: "Julia", 
@@ -119,8 +152,10 @@
             }
         ];
     
+        // Seleciona o container onde os membros serão inseridos
         const container = document.getElementById("membros");
     
+        // Percorre a lista de membros e adiciona ao container
         membros.forEach(membro => {
             const div = document.createElement("div");
             div.className = "member";
