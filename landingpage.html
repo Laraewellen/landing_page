@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Grupo | Equipe Incrível</title>
+    <title>Nosso Grupo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(180deg, #1e002e, #5e2b50, #ac6e85);
+            background: #1e002e;
             color: #fff;
         }
         .header {
             text-align: center;
             padding: 15px;
-            background: linear-gradient(90deg, #1e002e);
+            background: linear-gradient(90deg, #33034d);
             color: #ffaf7b;
             font-size: 20px;
             font-weight: bold;
@@ -87,7 +87,7 @@
 </head>
 <body>
     <div class="header">
-        <p>Bem-vindos ao nosso site! Conheça mais sobre nossa equipe incrível.</p>
+        <p>Quem nós somos?</p>
     </div>
     <div class="container" id="membros"></div>
     <footer>
@@ -95,13 +95,28 @@
     </footer>
     <script>
         const membros = [
-            { nome: "Julia", descricao: "Me chamo Julia gabriela, tenho 20 anos, gosto bastante de animes, e na maior parte do tempo estou mexendo com o photoshop, editando fotos, tenho bastante interesse na area de UX\UY design ja que desde sempre gosto da parte de criação grafica das coisas.", imagem: "imagens/Julia.jpeg" },
-            { nome: "Lara", descricao: "Me chamo Lara, tenho 20 anos, eu sempre gostei muito de tecnologia especificamente de jogos e de Inteligência artificial. Também sou gosto muito de ver curiosidades, principalmente históricas. Fora isso, gosto de animes, ler e escutar música.", imagem: "imagens/Lara.jpeg" },
-            { nome: "Luiza", descricao: "Me chamo Luiza, tenho 19 anos, gosto de tecnologia, especialmente modelagem de banco de dados. Estou sempre buscando aprender e me desafiar. No meu tempo livre, adoro jogar videogames e explorar novas mecânicas. Essa paixão me motiva a crescer e expandir meus conhecimentos!", imagem: "imagens/Luiza.jpeg" }
+            { 
+                nome: "Julia", 
+                descricao: "Me chamo Julia gabriela, tenho 20 anos, gosto bastante de animes, e na maior parte do tempo estou mexendo com o photoshop, editando fotos, tenho bastante interesse na area de UX/UI design, já que desde sempre gosto da parte de criação gráfica das coisas.", 
+                imagem: "imagens/Julia.jpeg",
+                github: "https://github.com/Julia-Gabriela" 
+            },
+            { 
+                nome: "Lara", 
+                descricao: "Me chamo Lara, tenho 20 anos, eu sempre gostei muito de tecnologia, especificamente de jogos e de Inteligência artificial. Também gosto muito de ver curiosidades, principalmente históricas. Fora isso, gosto de animes, ler e escutar música.", 
+                imagem: "imagens/Lara.jpeg",
+                github: "https://github.com/Laraewellen" 
+            },
+            { 
+                nome: "Luiza", 
+                descricao: "Me chamo Luiza, tenho 19 anos, gosto de tecnologia, especialmente modelagem de banco de dados. Estou sempre buscando aprender e me desafiar. No meu tempo livre, adoro jogar videogames e explorar novas mecânicas. Essa paixão me motiva a crescer e expandir meus conhecimentos!", 
+                imagem: "imagens/Luiza.jpeg",
+                github: "https://github.com/luizalima13" 
+            }
         ];
-
+    
         const container = document.getElementById("membros");
-
+    
         membros.forEach(membro => {
             const div = document.createElement("div");
             div.className = "member";
@@ -110,12 +125,11 @@
                 <h2>${membro.nome}</h2>
                 <p>${membro.descricao}</p>
                 <div class="social-icons">
-                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="${membro.github}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 </div>
             `;
             container.appendChild(div);
         });
-    </script>
+    </script>    
 </body>
 </html>
